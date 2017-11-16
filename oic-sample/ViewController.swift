@@ -94,11 +94,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
                 }
             }
         }
-        
-        // Get the values from the light resource
-        if self.ipLightResource != nil {
-            
-        }
     }
     
     // GET Callback
@@ -146,6 +141,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
             self.printLog("GET Callback - representation does not contain any values", withTransport: representation?.ocDevAddr.adapter)
         }
     }
+    
     // OBSERVE Callback
     lazy var observeLightResourceCallback: ObserveCallback = { [unowned self] (representation: OcRepresentation?) in
         // Check for an Iotivity stack error. Error codes start after OC_STACK_RESOURCE_CHANGED (4).
@@ -165,6 +161,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
             self.printLog("OBSERVE Callback - representation does not contain any values", withTransport: representation?.ocDevAddr.adapter)
         }
     }
+    
     //PUT CALLBACK
     lazy var putLightResourceCallback: PutCallback = { [unowned self] (representation: OcRepresentation?) in
         // Check for an Iotivity stack error
