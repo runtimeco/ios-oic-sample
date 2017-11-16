@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD836FC91F60E7D700E8F3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD836FC81F60E7D700E8F3A5 /* AppDelegate.swift */; };
+		BD836FCB1F60E7D700E8F3A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD836FCA1F60E7D700E8F3A5 /* ViewController.swift */; };
+		BD836FCE1F60E7D700E8F3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD836FCC1F60E7D700E8F3A5 /* Main.storyboard */; };
+		BD836FD01F60E7D700E8F3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD836FCF1F60E7D700E8F3A5 /* Assets.xcassets */; };
+		BD836FD31F60E7D700E8F3A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD836FD11F60E7D700E8F3A5 /* LaunchScreen.storyboard */; };
+		BD836FDC1F60F04100E8F3A5 /* iotivity-csdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD836FDB1F60F04100E8F3A5 /* iotivity-csdk.framework */; };
+		BD836FF31F60FA9200E8F3A5 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD836FF21F60FA9200E8F3A5 /* CoreBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD836FC51F60E7D700E8F3A5 /* oic-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "oic-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD836FC81F60E7D700E8F3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD836FCA1F60E7D700E8F3A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD836FCD1F60E7D700E8F3A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD836FCF1F60E7D700E8F3A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD836FD21F60E7D700E8F3A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD836FD41F60E7D700E8F3A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD836FDB1F60F04100E8F3A5 /* iotivity-csdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "iotivity-csdk.framework"; path = "ocf-sample/iotivity/out/ios/iotivity-csdk.framework"; sourceTree = "<group>"; };
+		BD836FF01F60F2E800E8F3A5 /* oic-sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oic-sample-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD836FF21F60FA9200E8F3A5 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD836FC21F60E7D700E8F3A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD836FF31F60FA9200E8F3A5 /* CoreBluetooth.framework in Frameworks */,
+				BD836FDC1F60F04100E8F3A5 /* iotivity-csdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD836FBC1F60E7D700E8F3A5 = {
+			isa = PBXGroup;
+			children = (
+				BD836FC71F60E7D700E8F3A5 /* oic-sample */,
+				BD836FC61F60E7D700E8F3A5 /* Products */,
+				BD836FDA1F60F04000E8F3A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BD836FC61F60E7D700E8F3A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD836FC51F60E7D700E8F3A5 /* oic-sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD836FC71F60E7D700E8F3A5 /* oic-sample */ = {
+			isa = PBXGroup;
+			children = (
+				BD836FF01F60F2E800E8F3A5 /* oic-sample-Bridging-Header.h */,
+				BD836FC81F60E7D700E8F3A5 /* AppDelegate.swift */,
+				BD836FCA1F60E7D700E8F3A5 /* ViewController.swift */,
+				BD836FCC1F60E7D700E8F3A5 /* Main.storyboard */,
+				BD836FCF1F60E7D700E8F3A5 /* Assets.xcassets */,
+				BD836FD11F60E7D700E8F3A5 /* LaunchScreen.storyboard */,
+				BD836FD41F60E7D700E8F3A5 /* Info.plist */,
+			);
+			path = "oic-sample";
+			sourceTree = "<group>";
+		};
+		BD836FDA1F60F04000E8F3A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD836FF21F60FA9200E8F3A5 /* CoreBluetooth.framework */,
+				BD836FDB1F60F04100E8F3A5 /* iotivity-csdk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD836FC41F60E7D700E8F3A5 /* oic-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD836FD71F60E7D700E8F3A5 /* Build configuration list for PBXNativeTarget "oic-sample" */;
+			buildPhases = (
+				BD836FC11F60E7D700E8F3A5 /* Sources */,
+				BD836FC21F60E7D700E8F3A5 /* Frameworks */,
+				BD836FC31F60E7D700E8F3A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "oic-sample";
+			productName = "ocf-sample";
+			productReference = BD836FC51F60E7D700E8F3A5 /* oic-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD836FBD1F60E7D700E8F3A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Brian Giori";
+				TargetAttributes = {
+					BD836FC41F60E7D700E8F3A5 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3Q849T3RP3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BD836FC01F60E7D700E8F3A5 /* Build configuration list for PBXProject "oic-sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD836FBC1F60E7D700E8F3A5;
+			productRefGroup = BD836FC61F60E7D700E8F3A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD836FC41F60E7D700E8F3A5 /* oic-sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD836FC31F60E7D700E8F3A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD836FD31F60E7D700E8F3A5 /* LaunchScreen.storyboard in Resources */,
+				BD836FD01F60E7D700E8F3A5 /* Assets.xcassets in Resources */,
+				BD836FCE1F60E7D700E8F3A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD836FC11F60E7D700E8F3A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD836FCB1F60E7D700E8F3A5 /* ViewController.swift in Sources */,
+				BD836FC91F60E7D700E8F3A5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD836FCC1F60E7D700E8F3A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD836FCD1F60E7D700E8F3A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD836FD11F60E7D700E8F3A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD836FD21F60E7D700E8F3A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD836FD51F60E7D700E8F3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD836FD61F60E7D700E8F3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD836FD81F60E7D700E8F3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 3Q849T3RP3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/oic-sample/iotivity/out/ios",
+				);
+				INFOPLIST_FILE = "oic-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = (
+					"-DROUTING_EP",
+					"-DTB_LOG",
+					"-DIP_ADAPTER",
+					"-DNO_EDR_ADAPTER",
+					"-DLE_ADAPTER",
+					"-DWITH_POSIX",
+					"-D_DARWIN_C_SOURCE",
+					"-DWITH_BWT",
+					"-DWITH_TCP",
+					"-DTB_LOG",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.runtime.oic-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/briangiori/dev/ios/oic-sample/oic-sample/oic-sample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BD836FD91F60E7D700E8F3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 3Q849T3RP3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/oic-sample/iotivity/out/ios",
+				);
+				INFOPLIST_FILE = "oic-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = (
+					"-DROUTING_EP",
+					"-DTB_LOG",
+					"-DIP_ADAPTER",
+					"-DNO_EDR_ADAPTER",
+					"-DLE_ADAPTER",
+					"-DWITH_POSIX",
+					"-D_DARWIN_C_SOURCE",
+					"-DWITH_BWT",
+					"-DWITH_TCP",
+					"-DTB_LOG",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.runtime.oic-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/briangiori/dev/ios/oic-sample/oic-sample/oic-sample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD836FC01F60E7D700E8F3A5 /* Build configuration list for PBXProject "oic-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD836FD51F60E7D700E8F3A5 /* Debug */,
+				BD836FD61F60E7D700E8F3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD836FD71F60E7D700E8F3A5 /* Build configuration list for PBXNativeTarget "oic-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD836FD81F60E7D700E8F3A5 /* Debug */,
+				BD836FD91F60E7D700E8F3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD836FBD1F60E7D700E8F3A5 /* Project object */;
+}
