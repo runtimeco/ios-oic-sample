@@ -42,7 +42,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Give Iotivity time to set up it's internal BLE client
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1), execute: {
             // Start the centralManager which will begin scanning
@@ -81,13 +81,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
             // Set the light resource if one is found which has a resource type
             // matching the OCF binary switch type.
             if resource.resourceTypes.contains("oic.r.switch.binary") {
-                // Use the resource's devAddr adapter to determine the transport
-                self.printLog("Found light resource! Getting values...", withTransport: resource.ocDevAddr.adapter)
-                if resource.ocDevAddr.adapter == OC_ADAPTER_IP {
+                // Use the resource's adapter to determine the transport
+                self.printLog("Found light resource! Getting values...", withTransport: resource.adapterType)
+                if resource.adapterType == OC_ADAPTER_IP {
                     self.ipLightResource = resource
                     // Call GET on IP light resource
                     self.ipLightResource!.get(self.getLightResourceCallback)
-                } else if resource.ocDevAddr.adapter == OC_ADAPTER_GATT_BTLE {
+                } else if resource.adapterType == OC_ADAPTER_GATT_BTLE {
                     self.bleLightResource = resource
                     // Call GET on BLE light resource
                     self.bleLightResource!.get(self.getLightResourceCallback)
@@ -100,45 +100,45 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     lazy var getLightResourceCallback: GetCallback = { [unowned self] (representation: OcRepresentation?) in
         // Check for an Iotivity stack error
         if (representation?.result.rawValue)! > OC_STACK_RESOURCE_CHANGED.rawValue {
-            self.printLog("GET Callback - Iotivity Error: \(representation!.result)", withTransport: representation?.ocDevAddr.adapter)
+            self.printLog("GET Callback - Iotivity Error: \(representation!.result)", withTransport: representation?.adapterType)
             return
         }
         // Get values from the resource's representation
         if let values = representation?.values {
             // Get the boolean value with the name "value" from values
             if let value = values["value"] as? Bool {
-                self.printLog("Got value from light resource: value=\(value)", withTransport: representation?.ocDevAddr.adapter)
-                self.printLog("Observing light value...", withTransport: representation?.ocDevAddr.adapter)
+                self.printLog("Got value from light resource: value=\(value)", withTransport: representation?.adapterType)
+                self.printLog("Observing light value...", withTransport: representation?.adapterType)
                 // Call observe on the resource
-                if representation?.ocDevAddr.adapter == OC_ADAPTER_IP {
+                if representation?.adapterType == OC_ADAPTER_IP {
                     self.ipLightResource?.observe(self.observeLightResourceCallback)
-                } else if representation?.ocDevAddr.adapter == OC_ADAPTER_GATT_BTLE {
+                } else if representation?.adapterType == OC_ADAPTER_GATT_BTLE {
                     self.bleLightResource?.observe(self.observeLightResourceCallback)
                 }
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(5), execute: {
-                    self.printLog("Cancelling observe of the light resource.", withTransport: representation?.ocDevAddr.adapter)
-                    if representation?.ocDevAddr.adapter == OC_ADAPTER_IP {
+                    self.printLog("Cancelling observe of the light resource.", withTransport: representation?.adapterType)
+                    if representation?.adapterType == OC_ADAPTER_IP {
                         self.ipLightResource?.cancelObserve()
-                    } else if representation?.ocDevAddr.adapter == OC_ADAPTER_GATT_BTLE {
+                    } else if representation?.adapterType == OC_ADAPTER_GATT_BTLE {
                         self.bleLightResource?.cancelObserve()
                     }
                 })
                 // Put the light after a two second delay
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: {
                     // Create a OcRepresentationValue to PUT to the light resource
-                    self.printLog("Putting value to light resource...", withTransport: representation?.ocDevAddr.adapter)
+                    self.printLog("Putting value to light resource...", withTransport: representation?.adapterType)
                     var putValue = OcRepresentationValue(name: "value", boolValue: !value)
-                    if representation?.ocDevAddr.adapter == OC_ADAPTER_IP {
+                    if representation?.adapterType == OC_ADAPTER_IP {
                         self.ipLightResource?.put([putValue!], callback: self.putLightResourceCallback)
-                    } else if representation?.ocDevAddr.adapter == OC_ADAPTER_GATT_BTLE {
+                    } else if representation?.adapterType == OC_ADAPTER_GATT_BTLE {
                         self.bleLightResource?.put([putValue!], callback: self.putLightResourceCallback)
                     }
                 })
             } else {
-                self.printLog("GET Callback - values does not contain a value with name \"value\"", withTransport: representation?.ocDevAddr.adapter)
+                self.printLog("GET Callback - values does not contain a value with name \"value\"", withTransport: representation?.adapterType)
             }
         } else {
-            self.printLog("GET Callback - representation does not contain any values", withTransport: representation?.ocDevAddr.adapter)
+            self.printLog("GET Callback - representation does not contain any values", withTransport: representation?.adapterType)
         }
     }
     
@@ -146,19 +146,19 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     lazy var observeLightResourceCallback: ObserveCallback = { [unowned self] (representation: OcRepresentation?) in
         // Check for an Iotivity stack error. Error codes start after OC_STACK_RESOURCE_CHANGED (4).
         if (representation?.result.rawValue)! > OC_STACK_RESOURCE_CHANGED.rawValue {
-            self.printLog("OBSERVE Callback - Iotivity Error: \(representation!.result)", withTransport: representation?.ocDevAddr.adapter)
+            self.printLog("OBSERVE Callback - Iotivity Error: \(representation!.result)", withTransport: representation?.adapterType)
             return
         }
         // Get values from the resource's representation
         if let values = representation?.values {
             // Get the boolean value with the name "value" from values
             if let value = values["value"] as? Bool {
-                self.printLog("OBSERVE Callback: value=\(value)", withTransport: representation?.ocDevAddr.adapter)
+                self.printLog("OBSERVE Callback: value=\(value)", withTransport: representation?.adapterType)
             } else {
-                self.printLog("OBSERVE Callback - values does not contain a value with name \"value\"", withTransport: representation?.ocDevAddr.adapter)
+                self.printLog("OBSERVE Callback - values does not contain a value with name \"value\"", withTransport: representation?.adapterType)
             }
         } else {
-            self.printLog("OBSERVE Callback - representation does not contain any values", withTransport: representation?.ocDevAddr.adapter)
+            self.printLog("OBSERVE Callback - representation does not contain any values", withTransport: representation?.adapterType)
         }
     }
     
@@ -166,10 +166,10 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
     lazy var putLightResourceCallback: PutCallback = { [unowned self] (representation: OcRepresentation?) in
         // Check for an Iotivity stack error
         if (representation?.result.rawValue)! > OC_STACK_RESOURCE_CHANGED.rawValue {
-            self.printLog("PUT Callback - Iotivity Error: \(representation!.result)", withTransport: representation?.ocDevAddr.adapter)
+            self.printLog("PUT Callback - Iotivity Error: \(representation!.result)", withTransport: representation?.adapterType)
             return
         }
-        self.printLog("PUT Callback - Success.", withTransport: representation?.ocDevAddr.adapter)
+        self.printLog("PUT Callback - Success.", withTransport: representation?.adapterType)
     }
     
     // MARK: - Logging Function
