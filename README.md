@@ -60,7 +60,7 @@ targets/nrf52
 ```
 
 
-## Using ios-oic-sample
+## Application Overview/Explanation
 First, set up your server before starting ios-oic-sample.
 
 On startup, ios-oic-sample begins resource discovery over IP and BLE transports simultaneously. Discovery over BLE and IP are slightly different but essentially amount to the same thing. Over IP, resource discovery is multicasted to any listening servers. BLE, without any built in Multicast functionality, relies on iOS's CoreBluetooth framework to scan for BLE advertisements containing the Iotivity UUID, then performs unicast discovery on each device individially. Although the two transports perform discovery differently, they both share the same callback where we differentiate the transports based on the `OcResource`'s adapter type (either `OC_ADAPTER_IP` or `OC_ADAPTER_GATT_BTLE`).
